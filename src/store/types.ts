@@ -17,8 +17,8 @@ export interface WeatherData {
     };
     cod: number;
     coord: {
-      lon: number;
-      lat: number;
+        lon: number;
+        lat: number;
     };
     dt: number;
     id: number;
@@ -32,6 +32,7 @@ export interface WeatherData {
     };
     name: string;
     sys: {
+        country: string;
         id: number;
         sunrise: number;
         sunset: number;
@@ -42,7 +43,7 @@ export interface WeatherData {
     weather: Weather[];
     wind: {
         speed: number;
-        deg:number;
+        deg: number;
     };
 }
 
