@@ -27,21 +27,21 @@ const Search: FC<SearchProps> = ({ title }) => {
     }
 
     return(
-        <div className="hero is-light has-text-centered">
-            <div className="hero-body">
+        <>
+            <div className="app_container">
                 <div className="container">
                     <h1 className="title">{title}</h1>
                     <form className="py-5" onSubmit={submitHandler}>
                         <input
                             type="text"
-                            className="input has-text centered"
+                            className="app_input"
                             placeholder="Enter city name"
                             style={{maxWidth: 300}}
                             value={city}
                             onChange={changeHandler}
                         />
                         <button
-                            className="btn is-primary"
+                            className="app_button"
                             style={{maxWidth: 300, margin: '0 auto'}}
                         >
                             Search
@@ -49,7 +49,36 @@ const Search: FC<SearchProps> = ({ title }) => {
                     </form>
                 </div>
             </div>
-        </div>
+
+
+
+            {/*<Grid container direction="column" spacing={2}>*/}
+            {/*    <Grid item container justifyContent="center">*/}
+            {/*        <Grid>*/}
+            {/*            <Typography variant="h4">*/}
+            {/*                Приложение "Погода"*/}
+            {/*            </Typography>*/}
+            {/*        </Grid>*/}
+            {/*        <form*/}
+            {/*            onSubmit={submitHandler}*/}
+            {/*        />*/}
+            {/*        <Grid container direction="column" spacing={2}>*/}
+            {/*            <Grid item xs>*/}
+            {/*                <TextField*/}
+            {/*                    fullWidth*/}
+            {/*                    variant="outlined"*/}
+            {/*                    label="Enter a city name"*/}
+            {/*                    value={city}*/}
+            {/*                    onChange={() => changeHandler}*/}
+            {/*                />*/}
+            {/*            </Grid>*/}
+            {/*            <Grid item xs>*/}
+            {/*                <Button color="primary" variant="contained">Search</Button>*/}
+            {/*            </Grid>*/}
+            {/*        </Grid>*/}
+            {/*    </Grid>*/}
+            {/*</Grid>*/}
+        </>
     )
 }
 
