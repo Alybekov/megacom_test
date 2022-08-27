@@ -50,6 +50,9 @@
   background-color: var(--button-background-color);
   border-color: var(--button-border-color);
 }
+.app_text {
+  color: var(--title-color);
+}
 
 .app_input,
 .app_input:focus {

@@ -22,6 +22,8 @@ html[data-theme='dark'] {
   --input-background-color: #7c7c7c;
   --input-border-color: #ba8fc2;
 
+  --title-color: #fff;
+
   --background-color: #292929;
 }
 

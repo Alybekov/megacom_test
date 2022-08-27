@@ -8,13 +8,13 @@ import Alert from "./Components/Alert/Alert";
 import Weather from "./Components/Weather/Weather";
 import { setAlert } from './store/actions/alertActions';
 import { setError } from './store/actions/weatherActions';
-import {Button, Grid} from "@mui/material";
 
 const useTheme = () => {
-    const [theme, setTheme] = useState('dark');
+    const [theme, setTheme] = useState(localStorage.getItem('app-theme') || 'dark');
 
     useLayoutEffect(() => {
         document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('app-theme', theme);
     }, [theme]);
 
     return {theme, setTheme};
@@ -37,18 +37,17 @@ const App: FC = () => {
     };
 
     return (
-        <Grid container>
-            <Search title="Enter city name and press search button" />
+        <div className="app_container">
+            <div>
+                <button className="button is-light" onClick={handleLightThemeClick}>Light</button>
+                <button className="button is-dark" onClick={handleDarkThemeClick}>Dark</button>
+            </div>
+            <Search title="Enter city name and press search button"/>
             {loading ? <h2 className="is-size-3 py-2">Loading...</h2> : weatherData && <Weather data={weatherData} />}
 
             {alertMsg && <Alert message={alertMsg} onClose={() => dispatch(setAlert(''))} />}
             {error && <Alert message={error} onClose={() => dispatch(setError())} />}
-
-            <Grid>
-                <Button onClick={handleLightThemeClick}>Light</Button>
-                <Button onClick={handleDarkThemeClick}>Dark</Button>
-            </Grid>
-        </Grid>
+        </div>
     );
 }
 
