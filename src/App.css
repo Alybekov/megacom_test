@@ -39,6 +39,7 @@
 
 .app_container {
   background-color: var(--background-color);
+  transition: background-color .2s linear;
 }
 
 .app_button,

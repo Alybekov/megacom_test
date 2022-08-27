@@ -42,7 +42,7 @@ const App: FC = () => {
                 <button className="button is-light" onClick={handleLightThemeClick}>Light</button>
                 <button className="button is-dark" onClick={handleDarkThemeClick}>Dark</button>
             </div>
-            <Search title="Enter city name and press search button"/>
+            <Search title="Введите город:"/>
             {loading ? <h2 className="is-size-3 py-2">Loading...</h2> : weatherData && <Weather data={weatherData} />}
 
             {alertMsg && <Alert message={alertMsg} onClose={() => dispatch(setAlert(''))} />}

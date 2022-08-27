@@ -6,8 +6,8 @@ interface WeatherProps {
 }
 
 const Weather: FC<WeatherProps> = ({data}) => {
-    const fahrenheit = (data.main.temp * 1.8 - 459.67).toFixed(2);
-    const celsius = (data.main.temp - 273.15).toFixed(2);
+    const fahrenheit = (data.main.temp * 9/5 + 32).toFixed(2);
+    const celsius = (data.main.temp).toFixed(2);
 
     return (
         <section className="section">
@@ -25,7 +25,7 @@ const Weather: FC<WeatherProps> = ({data}) => {
                     </div>
                     <div className="level-item has-text-centered">
                         <div>
-                            <p className="heading">temp</p>
+                            <p className="heading">температура</p>
                             <div className="title">
                                 <p className="mb-2 app_text">{fahrenheit}<sup>&#8457;</sup></p>
                                 <p className="app_text">{celsius}<sup>&#8451;</sup></p>
@@ -34,7 +34,7 @@ const Weather: FC<WeatherProps> = ({data}) => {
                     </div>
                     <div className="level-item has-text-centered">
                         <div>
-                            <p className="heading">humidity</p>
+                            <p className="heading">влажность</p>
                             <div className="title">
                                 <p className="app_text">{data.main.humidity}</p>
                             </div>
@@ -42,7 +42,7 @@ const Weather: FC<WeatherProps> = ({data}) => {
                     </div>
                     <div className="level-item has-text-centered">
                         <div>
-                            <p className="heading">pressure</p>
+                            <p className="heading">давление</p>
                             <div className="title">
                                 <p className="app_text">{data.main.pressure}</p>
                             </div>
@@ -50,7 +50,7 @@ const Weather: FC<WeatherProps> = ({data}) => {
                     </div>
                     <div className="level-item has-text-centered">
                         <div>
-                            <p className="heading">wind</p>
+                            <p className="heading">ветер</p>
                             <div className="title">
                                 <p className="app_text">{data.wind.speed} m/s</p>
                             </div>

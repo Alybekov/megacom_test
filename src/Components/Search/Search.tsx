@@ -36,7 +36,7 @@ const Search: FC<SearchProps> = ({title}) => {
                             <input
                                 type="text"
                                 className="input app_input has-text-centered mb-2"
-                                placeholder="Enter city name"
+                                placeholder="Введите город"
                                 style={{maxWidth: 300}}
                                 value={city}
                                 onChange={changeHandler}
