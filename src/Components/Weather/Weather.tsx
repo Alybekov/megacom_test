@@ -6,8 +6,8 @@ interface WeatherProps {
 }
 
 const Weather: FC<WeatherProps> = ({data}) => {
-    const fahrenheit = (data.main.temp * 9/5 + 32).toFixed(2);
-    const celsius = (data.main.temp).toFixed(2);
+    const fahrenheit = (data.main.temp * 9/5 + 32).toFixed();
+    const celsius = (data.main.temp).toFixed();
 
     return (
         <section className="section">
@@ -52,7 +52,7 @@ const Weather: FC<WeatherProps> = ({data}) => {
                         <div>
                             <p className="heading">ветер</p>
                             <div className="title">
-                                <p className="app_text">{data.wind.speed} m/s</p>
+                                <p className="app_text">{data.wind.speed} м/с</p>
                             </div>
                         </div>
                     </div>
